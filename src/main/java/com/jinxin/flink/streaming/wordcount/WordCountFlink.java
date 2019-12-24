@@ -31,7 +31,9 @@ public class WordCountFlink {
 
         DataStream<Tuple2<String, Integer>> counts =
                 text.flatMap(new Tokenizer()).setParallelism(1)
-                .keyBy(0).sum(1).setParallelism(1);
+                .keyBy(0)
+                .countWindow(10,5)
+                .sum(1).setParallelism(1);
 
         //输出数据
         if (params.has("output")){
@@ -44,12 +46,13 @@ public class WordCountFlink {
         env.execute("Shenjinxin First Flink Demo");
     }
 
-    private static class Tokenizer implements org.apache.flink.api.common.functions.FlatMapFunction<String, Tuple2<String, Integer>> {
-        public void flatMap(String s, Collector<Tuple2<String, Integer>> collector) throws Exception {
+    public static class Tokenizer implements org.apache.flink.api.common.functions.FlatMapFunction<String, Tuple2<String, Integer>> {
+        public void flatMap(String s, Collector<Tuple2<String, Integer>> collector) {
             //将文本分割
             String[] tokens = s.toLowerCase().split("\\W+");
 
             for (String token : tokens){
+                System.out.println(token);
                 if (token.length() > 0){
                     collector.collect(new Tuple2<String, Integer>(token, 1));
                 }

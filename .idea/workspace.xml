@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="" />
+    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/WindowWordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/WordCountFlink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/WordCountFlink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/util/WordCountData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/util/WordCountData.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -23,7 +33,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1VPdVh3W27yXaA6xO7sH1Ly6nBd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -42,7 +54,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WordCountFlink">
+  <component name="RunManager" selected="Application.WindowWordCount">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.Main" />
+      <module name="FlinkExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WindowWordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.WindowWordCount" />
+      <module name="FlinkExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.wordcount.WordCount" />
       <module name="FlinkExercise" />
@@ -71,7 +109,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WindowWordCount" />
         <item itemvalue="Application.WordCountFlink" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.WordCount" />
       </list>
     </recent_temporary>
@@ -86,11 +126,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577158688116</updated>
-      <workItem from="1577158689674" duration="10516000" />
+      <workItem from="1577158689674" duration="17473000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
