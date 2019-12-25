@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/WindowWordCount.java" afterDir="false" />
+    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="Flink 的窗口 使用时间戳，计算 10s 内走过 50 m 的最大速度，&#10;使用的是 TimeEvictor 定义 10s 的窗口  DeltaTrigger 当大于 50 的时候触发聚合操作&#10;maxby 根据第2项选出最大的值来，输出在终端">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/TopSpeedWindowing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/WordCountFlink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/WordCountFlink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/util/WordCountData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/wordcount/util/WordCountData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/WordCountFlink$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/WordCountFlink$Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/WordCountFlink$Tokenizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/WordCountFlink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/WordCountFlink.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/util/WordCountData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jinxin/flink/streaming/wordcount/util/WordCountData.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +54,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WindowWordCount">
+  <component name="RunManager" selected="Application.TopSpeedWindowing">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.Main" />
+      <module name="FlinkExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TopSpeedWindowing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.TopSpeedWindowing" />
       <module name="FlinkExercise" />
       <extension name="coverage">
         <pattern>
@@ -81,19 +94,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.wordcount.WordCount" />
-      <module name="FlinkExercise" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jinxin.flink.streaming.wordcount.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WordCountFlink" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.wordcount.WordCountFlink" />
       <module name="FlinkExercise" />
@@ -107,12 +107,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.test" />
+      <module name="FlinkExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TopSpeedWindowing" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.WindowWordCount" />
         <item itemvalue="Application.WordCountFlink" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.WordCount" />
       </list>
     </recent_temporary>
   </component>
@@ -126,8 +140,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577158688116</updated>
-      <workItem from="1577158689674" duration="17473000" />
+      <workItem from="1577158689674" duration="24639000" />
+      <workItem from="1577250028192" duration="13425000" />
     </task>
+    <task id="LOCAL-00001" summary="练习了 flink 的滑动窗口">
+      <created>1577183937246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577183937246</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,10 +161,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="练习了 flink 的滑动窗口" />
+    <MESSAGE value="Flink 的窗口 使用时间戳，计算 10s 内走过 50 m 的最大速度，&#10;使用的是 TimeEvictor 定义 10s 的窗口  DeltaTrigger 当大于 50 的时候触发聚合操作&#10;maxby 根据第2项选出最大的值来，输出在终端" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flink 的窗口 使用时间戳，计算 10s 内走过 50 m 的最大速度，&#10;使用的是 TimeEvictor 定义 10s 的窗口  DeltaTrigger 当大于 50 的时候触发聚合操作&#10;maxby 根据第2项选出最大的值来，输出在终端" />
   </component>
 </project>
