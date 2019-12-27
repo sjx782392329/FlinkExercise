@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/GroupedProcessingTimeWindowExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/SessionWindowing.java" afterDir="false" />
+    <list default="true" id="2d1d5045-ec65-473f-a285-27a83ab55dd5" name="Default Changelist" comment="twitter example 统计 json 串中的">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/twitter/TwitterExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/twitter/TwitterExampleData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/twitter/TwitterExampleFlink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/GroupedProcessingTimeWindowExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/GroupedProcessingTimeWindowExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/SessionWindowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/flink/streaming/windowing/SessionWindowing.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +43,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jinxin.flink.twitter" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -51,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GroupedProcessingTimeWindowExample">
+  <component name="RunManager" selected="Application.TwitterExampleFlink">
     <configuration name="GroupedProcessingTimeWindowExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.GroupedProcessingTimeWindowExample" />
       <module name="FlinkExercise" />
@@ -91,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WindowWordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.WindowWordCount" />
+    <configuration name="TwitterExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.twitter.TwitterExample" />
       <module name="FlinkExercise" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="PATTERN" value="com.jinxin.flink.twitter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.streaming.windowing.test" />
+    <configuration name="TwitterExampleFlink" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinxin.flink.twitter.TwitterExampleFlink" />
       <module name="FlinkExercise" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jinxin.flink.streaming.windowing.*" />
+          <option name="PATTERN" value="com.jinxin.flink.twitter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GroupedProcessingTimeWindowExample" />
+        <item itemvalue="Application.TwitterExampleFlink" />
+        <item itemvalue="Application.TwitterExample" />
         <item itemvalue="Application.SessionWindowing" />
+        <item itemvalue="Application.GroupedProcessingTimeWindowExample" />
         <item itemvalue="Application.TopSpeedWindowing" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="Application.WindowWordCount" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577158688116</updated>
       <workItem from="1577158689674" duration="24639000" />
-      <workItem from="1577250028192" duration="21391000" />
+      <workItem from="1577250028192" duration="30184000" />
     </task>
     <task id="LOCAL-00001" summary="练习了 flink 的滑动窗口">
       <created>1577183937246</created>
@@ -154,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577270978336</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Flink Session 窗口，大于 gap 才会进入下一个新的窗口">
+      <created>1577356981595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577356981595</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +192,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="练习了 flink 的滑动窗口" />
     <MESSAGE value="Flink 的窗口 使用时间戳，计算 10s 内走过 50 m 的最大速度，&#10;使用的是 TimeEvictor 定义 10s 的窗口  DeltaTrigger 当大于 50 的时候触发聚合操作&#10;maxby 根据第2项选出最大的值来，输出在终端" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flink 的窗口 使用时间戳，计算 10s 内走过 50 m 的最大速度，&#10;使用的是 TimeEvictor 定义 10s 的窗口  DeltaTrigger 当大于 50 的时候触发聚合操作&#10;maxby 根据第2项选出最大的值来，输出在终端" />
+    <MESSAGE value="Flink Session 窗口，大于 gap 才会进入下一个新的窗口" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flink Session 窗口，大于 gap 才会进入下一个新的窗口" />
   </component>
 </project>

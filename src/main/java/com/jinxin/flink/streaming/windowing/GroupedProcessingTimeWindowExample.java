@@ -46,7 +46,7 @@ public class GroupedProcessingTimeWindowExample {
                 }
             }
             final long endTime = System.currentTimeMillis();
-            System.out.println("Took " + (endTime - startTime) + "msecs for " + numElements + " values");
+            System.out.println("Took " + (endTime - startTime) + " msecs for " + numElements + " values");
         }
 
         public void cancel() {

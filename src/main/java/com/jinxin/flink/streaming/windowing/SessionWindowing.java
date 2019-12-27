@@ -44,7 +44,7 @@ public class SessionWindowing {
 
         input.add(new Tuple3<String, Long, Integer>("a", 10L, 1));
         input.add(new Tuple3<String, Long, Integer>("c", 11L, 1));
-        input.add(new Tuple3<String, Long, Integer>("6", 11L, 1));
+        input.add(new Tuple3<String, Long, Integer>("d", 11L, 1));
 
         DataStream<Tuple3<String, Long, Integer>> source = env
                 .addSource(new SourceFunction<Tuple3<String, Long, Integer>>() {
@@ -52,7 +52,7 @@ public class SessionWindowing {
                     public void run(SourceContext<Tuple3<String, Long, Integer>> sourceContext) throws Exception {
                         for (Tuple3<String, Long, Integer> value : input){
                             sourceContext.collectWithTimestamp(value, value.f1);
-                            sourceContext.emitWatermark(new Watermark(value.f1 - 1));
+                            sourceContext.emitWatermark(new Watermark(value.f1 - 16));
                         }
                         sourceContext.emitWatermark(new Watermark(Long.MAX_VALUE));
                     }
